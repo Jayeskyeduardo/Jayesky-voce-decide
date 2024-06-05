@@ -1,49 +1,66 @@
-const caixaPrincipal = document.qwerySelector(".caixa-principal");
-const caixaPerguntas = document.qwerySelector(".caixa-perguntas");
-const caixaAlternativas = document.qwerySelector(".caixa-alternativas");
-const caixaResultado = document.qwerySelector(".caixa-resultado");
-const textoResultado = document.qwerySelector(".texto-resultado");
+const caixaPrincipal = document.querySelector(".caixa-principal");
+const caixaPerguntas = document.querySelector(".caixa-perguntas");
+const caixaAlternativas = document.querySelector(".caixa-alternativas");
+const caixaResultado = document.querySelector(".caixa-resultado");
+const textoResultado = document.querySelector(".texto-resultado");
 
-const perguntas =[
+const perguntas = [
   {
-    enunciado: "Pergunta 1",
+    enunciado: "Qual é a cor dos olhos do Dayvison?",
     alternativas: [
-      "Respota 1",
-      "Reposta 2"
+      "Azuis",
+      "Verdes"
     ]
   },
 
   {
-    enunciado: "Pergunta 2",
+    enunciado: "Quem é o melhor vilão Jason ou Fred Krügger",
     alternativas: [
-      "Respota 1",
-      "Reposta 2"
+      "Jason",
+      "Fred Krügger"
     ]
   },
 
   {
     enunciado: "Pergunta 3",
     alternativas: [
-      "Respota 1",
-      "Reposta 2"
+      "Resposta 1",
+      "Resposta 2"
     ]
   },
 
   {
     enunciado: "Pergunta 4",
     alternativas: [
-      "Respota 1",
-      "Reposta 2"
+      "Resposta 1",
+      "Resposta 2"
     ]
   },
 
   {
     enunciado: "Pergunta 5",
     alternativas: [
-      "Respota 1",
-      "Reposta 2"
+      "Resposta 1",
+      "Resposta 2"
     ]
   }
-
-  
 ];
+
+let atual =0;
+let perguntaAtual;
+
+function mostraAlternativas() {
+  for (const alternativa of perguntaAtual.alternativas) {
+    const botaoAlternativas = document.createElement("button");
+    botaoAlternativas.textContent = alternativa;
+    caixaAlternativas.appendChild(botaoAlternativas);
+  }
+}
+
+function mostraPergunta() {
+  perguntaAtual = perguntas[atual];
+  caixaPerguntas.textContent = perguntaAtual.enunciado;
+  mostraAlternativas();
+}
+
+mostraPergunta();
