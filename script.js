@@ -6,10 +6,10 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
   {
-    enunciado: "Qual é a cor dos olhos do Dayvison?",
+    enunciado: "Assim que saiu da escola você se depara com uma noca tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e aúdios hiper-realistas. Qual o seu primeiro pensamento?",
     alternativas: [
-      "Azuis",
-      "Verdes"
+      "Isso é assustador!",
+      "Isso é maravilhoso!"
     ]
   },
 
